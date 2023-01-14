@@ -23,6 +23,7 @@ public class ClickButton : MonoBehaviour
     }
 
     public void ClickPlayAgain(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
+    
 }
