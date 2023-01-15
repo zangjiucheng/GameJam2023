@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.XR;
 
 public class PrototypeHeroDemo : MonoBehaviour {
 
@@ -11,6 +12,13 @@ public class PrototypeHeroDemo : MonoBehaviour {
     [SerializeField] GameObject m_RunStopDust;
     [SerializeField] GameObject m_JumpDust;
     [SerializeField] GameObject m_LandingDust;
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private Transform wallCheck2;
+    [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private LayerMask crusherLayer;
+    [SerializeField] private Transform hitBox;
+
+    private Vector3 spawn;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -22,6 +30,9 @@ public class PrototypeHeroDemo : MonoBehaviour {
     private int                 m_facingDirection = 1;
     private float               m_disableMovementTimer = 0.0f;
 
+    private bool isWallSliding;
+    private float wallSlidingSpeed = 2f;
+
     // Use this for initialization
     void Start ()
     {
@@ -30,11 +41,21 @@ public class PrototypeHeroDemo : MonoBehaviour {
         m_audioSource = GetComponent<AudioSource>();
         m_audioManager = AudioManager_PrototypeHero.instance;
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Prototype>();
+        spawn = new Vector3(transform.position.x, transform.position.y);
     }
 
     // Update is called once per frame
     void Update ()
     {
+        if (IsCrushed())
+        {
+            respawn();
+        }
+
+
+        // Wall Sliding
+        WallSlide();
+
         // Decrease timer that disables input movement. Used when attacking
         m_disableMovementTimer -= Time.deltaTime;
 
@@ -94,7 +115,7 @@ public class PrototypeHeroDemo : MonoBehaviour {
 
         // -- Handle Animations --
         //Jump
-        if (Input.GetButtonDown("Jump") && m_grounded && m_disableMovementTimer < 0.0f)
+        if (Input.GetButtonDown("Jump") && (m_grounded || IsWalled1() || IsWalled2()) && m_disableMovementTimer < 0.0f)
         {
             m_animator.SetTrigger("Jump");
             m_grounded = false;
@@ -110,6 +131,29 @@ public class PrototypeHeroDemo : MonoBehaviour {
         //Idle
         else
             m_animator.SetInteger("AnimState", 0);
+    }
+
+    //Wall Sliding
+    private bool IsWalled1()
+    {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+    }
+    private bool IsWalled2()
+    {
+        return Physics2D.OverlapCircle(wallCheck2.position, 0.2f, wallLayer);
+    }
+
+    private void WallSlide()
+    {
+        if ((IsWalled1() || IsWalled2()) && !m_grounded && m_moving)
+        {
+            isWallSliding = true;
+            m_body2d.velocity = new Vector2(m_body2d.velocity.x, Mathf.Clamp(m_body2d.velocity.y, -wallSlidingSpeed, float.MaxValue));
+        }
+        else
+        {
+            isWallSliding = false;
+        }
     }
 
     // Function used to spawn a dust effect
@@ -155,5 +199,15 @@ public class PrototypeHeroDemo : MonoBehaviour {
         m_audioManager.PlaySound("Landing");
         // Spawn Dust
         SpawnDustEffect(m_LandingDust);
+    }
+
+    private bool IsCrushed()
+    {
+        return Physics2D.OverlapCircle(hitBox.position, 0.2f, crusherLayer);
+    }
+
+    void respawn()
+    {
+        transform.position = spawn;
     }
 }
