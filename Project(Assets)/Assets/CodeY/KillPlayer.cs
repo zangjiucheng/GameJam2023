@@ -22,7 +22,7 @@ public class KillPlayer : MonoBehaviour
     {
         if (collision.CompareTag("LimitDeath"))
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(4);
         }
     }
 
