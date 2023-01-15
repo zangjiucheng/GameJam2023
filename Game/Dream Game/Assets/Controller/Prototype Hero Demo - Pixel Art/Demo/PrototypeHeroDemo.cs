@@ -15,6 +15,10 @@ public class PrototypeHeroDemo : MonoBehaviour {
     [SerializeField] private Transform wallCheck;
     [SerializeField] private Transform wallCheck2;
     [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private LayerMask crusherLayer;
+    [SerializeField] private Transform hitBox;
+
+    private Vector3 spawn;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -37,11 +41,17 @@ public class PrototypeHeroDemo : MonoBehaviour {
         m_audioSource = GetComponent<AudioSource>();
         m_audioManager = AudioManager_PrototypeHero.instance;
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Prototype>();
+        spawn = new Vector3(transform.position.x, transform.position.y);
     }
 
     // Update is called once per frame
     void Update ()
     {
+        if (IsCrushed())
+        {
+            respawn();
+        }
+
 
         // Wall Sliding
         WallSlide();
@@ -189,5 +199,15 @@ public class PrototypeHeroDemo : MonoBehaviour {
         m_audioManager.PlaySound("Landing");
         // Spawn Dust
         SpawnDustEffect(m_LandingDust);
+    }
+
+    private bool IsCrushed()
+    {
+        return Physics2D.OverlapCircle(hitBox.position, 0.2f, crusherLayer);
+    }
+
+    void respawn()
+    {
+        transform.position = spawn;
     }
 }
