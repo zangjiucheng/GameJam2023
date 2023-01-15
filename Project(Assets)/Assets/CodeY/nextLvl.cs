@@ -21,7 +21,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (nextLvl.CompareTag("LevelFinished"))
         {
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(5);
         }
     }
 

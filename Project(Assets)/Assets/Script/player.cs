@@ -29,7 +29,7 @@ public class player : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(4);
         }
     }
 

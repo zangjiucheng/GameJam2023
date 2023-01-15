@@ -20,8 +20,7 @@ public class clickBtm : MonoBehaviour
     public void clickPlayBtm()
     {
         // SceneManager.LoadScene("Game");
-        // Wa
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
     public void clickQuitBtm()
     {
@@ -31,15 +30,14 @@ public class clickBtm : MonoBehaviour
     public void clickBackBtm()
     {
         // SceneManager.LoadScene("Game");
-        // Wa
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
     public void clickLevel1()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
     }
     public void clickLevel2()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 }
