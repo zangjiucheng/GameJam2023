@@ -15,18 +15,20 @@ public class KillPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-   
+
     }
 
-    void OnTriggerEnter2D(Collider2D collision){
-        if(collision.CompareTag("LimitDeath")){
-            SceneManager.LoadScene(0);
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("LimitDeath"))
+        {
+            SceneManager.LoadScene(5);
         }
     }
-    
 
 
-    }
+
+}
 
 
 

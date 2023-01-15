@@ -8,18 +8,20 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    
-    void OnTriggerEnter2D(Collider2D nextLvl){
-        if(nextLvl.CompareTag("LevelFinished")){
-            SceneManager.LoadScene(1);
+
+    void OnTriggerEnter2D(Collider2D nextLvl)
+    {
+        if (nextLvl.CompareTag("LevelFinished"))
+        {
+            SceneManager.LoadScene(6);
         }
     }
 
