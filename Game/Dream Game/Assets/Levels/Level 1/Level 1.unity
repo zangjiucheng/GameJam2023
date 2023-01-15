@@ -316,7 +316,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7653815130926902273, guid: 0620aeb29b80ce04ebc82b7babb105ef, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7653815130926902273, guid: 0620aeb29b80ce04ebc82b7babb105ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -544,7 +544,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7653815130926902273, guid: 0620aeb29b80ce04ebc82b7babb105ef, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7653815130926902273, guid: 0620aeb29b80ce04ebc82b7babb105ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -603,10 +603,6 @@ PrefabInstance:
       propertyPath: hitBox
       value: 
       objectReference: {fileID: 1636311712}
-    - target: {fileID: 862149923167858181, guid: a67f255908a4e324d886b26cfd143857, type: 3}
-      propertyPath: crusherLayer.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
     - target: {fileID: 2082244618295018760, guid: a67f255908a4e324d886b26cfd143857, type: 3}
       propertyPath: m_Name
       value: Character Variant
@@ -670,7 +666,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7653815130926902273, guid: 0620aeb29b80ce04ebc82b7babb105ef, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7653815130926902273, guid: 0620aeb29b80ce04ebc82b7babb105ef, type: 3}
       propertyPath: m_LocalPosition.x
