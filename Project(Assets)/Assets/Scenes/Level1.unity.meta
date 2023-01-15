@@ -1,3 +1,4 @@
+<<<<<<<< HEAD:Project(Assets)/Assets/Scenes/Level1.unity.meta
 fileFormatVersion: 2
 guid: d7d907a2dc32bfe4b952c01f4cd0675b
 DefaultImporter:
@@ -5,3 +6,12 @@ DefaultImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+========
+fileFormatVersion: 2
+guid: 2cda990e2423bbf4892e6590ba056729
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>>> parent of 047c3bf (lvls):Project(Assets)/Assets/Scenes/SampleScene.unity.meta
