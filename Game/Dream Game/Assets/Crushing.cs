@@ -11,7 +11,7 @@ public class Crushing : MonoBehaviour
     float up;
     float down;
 
-    bool crush;
+    bool crush = true;
 
     // Start is called before the first frame update
     void Start()
