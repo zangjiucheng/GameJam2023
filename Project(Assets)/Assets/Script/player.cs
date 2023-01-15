@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class player : MonoBehaviour
         if (action <= Time.time){
             takeDamage(1);
             action = Time.time + timeDelay;
+        }
+        if (currentHealth <= 0){
+            SceneManager.LoadScene(1);
         }
     }
 
