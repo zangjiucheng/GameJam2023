@@ -36,14 +36,10 @@ public class clickBtm : MonoBehaviour
     }
     public void clickLevel1()
     {
-        SceneManager.LoadScene("Game1");
+        SceneManager.LoadScene(4);
     }
     public void clickLevel2()
     {
-        SceneManager.LoadScene("Game2");
-    }
-    public void clickLevel3()
-    {
-        SceneManager.LoadScene("Game3");
+        SceneManager.LoadScene(3);
     }
 }

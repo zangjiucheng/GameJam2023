@@ -25,7 +25,7 @@ public class ClickButton : MonoBehaviour
 
     public void ClickPlayAgain()
     {
-        SceneManager.LoadScene("Level-Select-Example");
+        SceneManager.LoadScene(2);
     }
 
 }

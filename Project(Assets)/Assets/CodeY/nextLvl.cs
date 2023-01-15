@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class nextLvl : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,10 +18,10 @@ public class nextLvl : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D nextLvl)
-    {          
+    {
         if (nextLvl.CompareTag("LevelFinished"))
         {
-            SceneManager.LoadScene("Win-Screen");
+            SceneManager.LoadScene(6);
         }
     }
 
