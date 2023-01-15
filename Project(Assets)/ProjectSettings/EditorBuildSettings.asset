@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game1-JZ.unity
     guid: bd2113f9e1cd54f68a176b6bb9066ea9
+  - enabled: 1
+    path: Assets/Scenes/Ending-Screen.unity
+    guid: be2d2e314204940489888f8b3b53b550
+  - enabled: 1
+    path: Assets/Scenes/Win-Screen.unity
+    guid: ad552349af42a42869233df45dfc381c
   m_configObjects: {}

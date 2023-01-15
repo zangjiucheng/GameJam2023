@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
-    
+
     public int maxHealth = 60;
     public int currentHealth;
     public Health healthBar;
@@ -22,16 +22,19 @@ public class player : MonoBehaviour
 
     void Update()
     {
-        if (action <= Time.time){
+        if (action <= Time.time)
+        {
             takeDamage(1);
             action = Time.time + timeDelay;
         }
-        if (currentHealth <= 0){
-            SceneManager.LoadScene(1);
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene(5);
         }
     }
 
-    public void takeDamage(int damage){
+    public void takeDamage(int damage)
+    {
         currentHealth -= damage;
         healthBar.setHealth(currentHealth);
     }
