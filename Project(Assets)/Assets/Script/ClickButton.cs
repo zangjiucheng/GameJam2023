@@ -8,7 +8,7 @@ public class ClickButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -17,13 +17,15 @@ public class ClickButton : MonoBehaviour
 
     }
 
-    public void ClickQuit(){
+    public void ClickQuit()
+    {
         Debug.Log("Worked!");
         Application.Quit();
     }
 
-    public void ClickPlayAgain(){
-        SceneManager.LoadScene(1);
+    public void ClickPlayAgain()
+    {
+        SceneManager.LoadScene(2);
     }
-    
+
 }
