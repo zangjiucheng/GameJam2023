@@ -368,12 +368,16 @@ PrefabInstance:
       objectReference: {fileID: 1968732330}
     - target: {fileID: 5779919143759674799, guid: e481822248898d04e9808a3d3ca78e5a, type: 3}
       propertyPath: m_maxSpeed
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5779919143759674799, guid: e481822248898d04e9808a3d3ca78e5a, type: 3}
       propertyPath: wallCheck2
       value: 
       objectReference: {fileID: 1932583277}
+    - target: {fileID: 5779919143759674799, guid: e481822248898d04e9808a3d3ca78e5a, type: 3}
+      propertyPath: m_hideSword
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5779919143759674799, guid: e481822248898d04e9808a3d3ca78e5a, type: 3}
       propertyPath: m_jumpForce
       value: 8
