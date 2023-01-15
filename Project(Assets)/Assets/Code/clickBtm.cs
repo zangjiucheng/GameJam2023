@@ -34,4 +34,7 @@ public class clickBtm : MonoBehaviour
     public void clickLevel1(){
         SceneManager.LoadScene(3);
     }
+    public void clickLevel2(){
+        SceneManager.LoadScene(4);
+    }
 }
